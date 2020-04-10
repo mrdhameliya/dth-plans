@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ChannelsService } from '../channels.service';
+import { ChannelsFields } from '../channels-fields';
 
 @Component({
   selector: 'app-subscribed-plans-and-channels',
@@ -8,13 +10,19 @@ import { Router } from '@angular/router';
 })
 export class SubscribedPlansAndChannelsComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  channels: ChannelsFields[];
+
+  constructor(
+    private route: Router,
+    private channelService: ChannelsService
+  ) { }
 
   openList() {
     this.route.navigate(['/plansList']);
   }
 
   ngOnInit(): void {
+    this.channels = this.channelService.getChannels();
   }
 
 }

@@ -1,24 +1,24 @@
 <div>
     <div>
-        <h3>Subcriber ID: 101</h3>
-        <h3>Subscriber Name: Mayur Dhameliya</h3>
+        <p>Subcriber ID: 101</p>
+        <p>Subscriber Name: Mayur Dhameliya</p>
         <button (click)="openList()">Edit</button>
     </div>
 
     <div>
         <div>
-            <h3>Subscribed Plans list:</h3>
+            <h5>Subscribed Plans list:</h5>
         </div>
         <div>
             <a class="col-1-4">
                 <div class="module">
-                    <h4>Hindi Basic</h4>
+                    <h6>Hindi Basic</h6>
                 </div>
             </a>
-            
+
             <a class="col-1-4">
                 <div class="module">
-                    <h4>Jumbo Family</h4>
+                    <h6>Jumbo Family</h6>
                 </div>
             </a>
         </div>
@@ -26,7 +26,33 @@
 
     <div>
         <div>
-            <h3>Extra Subscribed Channels List</h3>
+            <h5>Extra Subscribed Channels List:</h5>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Channel ID</th>
+                        <th>Channel Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>11</td>
+                        <td>CNBC TV18</td>
+                    </tr>
+                    <tr>                                    
+                        <td>12</td>
+                        <td>Univision</td>
+                    </tr>
+                    <tr>                                    
+                        <td>15</td>
+                        <td>AL Jazeera</td>
+                    </tr>
+                    <!-- <tr *ngFor="let channel of channels">
+                        <td>{{channel.channelId}}</td>
+                        <td>{{channel.channelName}}</td>
+                    </tr> -->
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
