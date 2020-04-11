@@ -1,0 +1,81 @@
+.first-part {
+    margin-bottom: 12px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    background-clip: border-box;
+    background-origin: padding-box;
+    border-style: ridge;
+    display: flex;
+}
+
+.first-child {
+    flex: 1;
+    margin-left: 1100px;
+}
+.first-child:first-child {
+    margin-left: 10px ;
+}
+
+.second-part {
+    margin-bottom: 12px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    background-clip: border-box;
+    background-origin: padding-box;
+    border-style: ridge;
+}
+
+.plan-part {
+    display: flex;
+}
+
+.plan-part-child {
+    flex: 1;
+    margin-left: 100px;
+}
+.plan-part-child:first-child {
+    margin-left: 10px;
+    padding: 10px;
+}
+
+// .plan-details {
+//     box-shadow: green;
+//     border: 1px solid black;
+// }
+
+.third-part {
+    margin-bottom: 12px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    background-clip: border-box;
+    background-origin: padding-box;
+    border-style: ridge;
+}
+
+button {
+    position: relative;
+    // top: 50%;
+    margin-top: 50px;
+    // left: 90%;
+    transform: translate(-50%, -50%);
+    background-color: #4caf50;
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: red;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #337414;
+    color: white;
+}
+
+button.btp1 {
+    margin-left: 70px;
+}
+// button.btp2 {
+//     margin-left: 15px;
+// }

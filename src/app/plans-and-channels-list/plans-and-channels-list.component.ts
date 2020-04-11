@@ -12,7 +12,8 @@ import { ChannelsFields } from '../channels-fields';
 export class PlansAndChannelsListComponent implements OnInit {
 
   total = 0;
-  count = 0;
+  planAddClick = 0;
+  channelAddClick = 0;
   plans: PlansFields[];
   channels: ChannelsFields[];
 
@@ -47,20 +48,19 @@ export class PlansAndChannelsListComponent implements OnInit {
   }
   planAddButton() {
     this.total = this.total + this.planData.planPrice;
-    // this.count = this.count + 1;
-    // console.log(this.count);
-    this.display = true;
+    this.planAddClick = this.planAddClick + 1;
   }
   planClearButton() {
     this.total = this.total - this.planData.planPrice;
-    // this.count = this.count--;
-    // console.log(this.count);
+    this.planAddClick = this.planAddClick - 1;
   }
 
   channelAddButton() {
-    this.total = this.total + this.channelData.planPrice;
+    this.total = this.total + this.channelData.channelPrice;
+    this.channelAddClick = this.channelAddClick + 1;
   }
   channelClearButton() {
-    this.total = this.total - this.channelData.planPrice;
+    this.total = this.total - this.channelData.channelPrice;
+    this.channelAddClick = this.channelAddClick - 1;
   }
 }

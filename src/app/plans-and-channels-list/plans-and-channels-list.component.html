@@ -1,38 +1,52 @@
 <div>
     <div>
-        <button (click)="mainScreen()">Back</button>
-        <p>Grand Total: {{total}} </p>
+        <img src="https://www.dishtv.in/images/logo.png" alt="Dish TV Logo">
     </div>
-    <div>
-        <h5>Plans List:</h5>
-        <label for="plans">
-            Select from the following:
-        </label>
-        <select [(ngModel)]="selectedPlan" (ngModelChange)='onPlanSelected($event)'>
-            <option value="" selected></option>
-            <option *ngFor="let plan of plans" [ngValue]="plan">{{plan.planName}}</option>
-        </select>
-        <div *ngIf="selectedPlan">
-            <p>Plan Name: {{planData.planName}}</p>
-            <p>No. of Channels: {{planData.channelsCount}}</p>
-            <p>Plan Price: {{planData.planPrice}}</p>
-            <button (click)="planAddButton()" *ngIf="selectedPlan">Add Plan</button>
-            <button *ngIf="display" (click)="planClearButton()">Clear</button>
+    <div class="first-part">
+        <div class="first-child">
+            <p>Grand Total: {{total}} </p>
         </div>
-        
+        <div class="first-child">
+            <button (click)="mainScreen()">Back</button>
+        </div>
     </div>
-    <div>
+
+    <div class="second-part">
+        <h5>Plans List:</h5>
+        <div class="plan-part">
+            <div class="plan-part-child">
+                <label for="plans">Select from the following:</label>
+                <select [(ngModel)]="selectedPlan" (ngModelChange)='onPlanSelected($event)'>
+                    <option value="" selected></option>
+                    <option *ngFor="let plan of plans" [ngValue]="plan">{{plan.planName}}</option>
+                </select>
+            </div>
+            <div *ngIf="selectedPlan" class="plan-part-child plan-details">
+                <p>Plan Name: {{planData.planName}}</p>
+                <p>No. of Channels: {{planData.channelsCount}}</p>
+                <p>Plan Price: {{planData.planPrice}}</p>
+                <button class="btp1" (click)="planAddButton()" *ngIf="selectedPlan">Add Plan</button>
+                <button *ngIf="planAddClick > 0" (click)="planClearButton()">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="third-part">
         <h5>Extra Channels List:</h5>
-        <label>Select from the following:</label>
-        <select [(ngModel)]="selectedChannel" (ngModelChange)='onChannelSelected($event)'>
-            <option value="" selected></option>
-            <option *ngFor="let channel of channels" [ngValue]="channel">{{channel.channelName}}</option>
-        </select>
-        <div *ngIf="selectedChannel">
-            <p>Channel Name: {{channelData.channelName}}</p>
-            <p>Price: {{channelData.channelPrice}}</p>
-            <button (click)="channelAddButton()" *ngIf="selectedChannel">Add Channel</button>
-            <button (click)="channelClearButton()" *ngIf="selectedChannel">Clear</button>
+        <div class="plan-part">
+            <div class="plan-part-child">
+                <label for="channels">Select from the following:</label>
+                <select [(ngModel)]="selectedChannel" (ngModelChange)='onChannelSelected($event)'>
+                    <option value="" selected></option>
+                    <option *ngFor="let channel of channels" [ngValue]="channel">{{channel.channelName}}</option>
+                </select>
+            </div>
+            <div *ngIf="selectedChannel" class="plan-part-child">
+                <p>Channel Name: {{channelData.channelName}}</p>
+                <p>Price: {{channelData.channelPrice}}</p>
+                <button class="btp1" (click)="channelAddButton()" *ngIf="selectedChannel">Add Channel</button>
+                <button *ngIf="channelAddClick" (click)="channelClearButton()">Clear</button>
+            </div>
         </div>
     </div>
 </div>
