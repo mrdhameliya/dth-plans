@@ -19,11 +19,10 @@ export class PlansAndChannelsListComponent implements OnInit {
 
   selectedPlan: any = {};
   selectedChannel: any = {};
-  preview: boolean;
-  display = false;
 
   planData: any;
   channelData: any;
+  priceValue: number;
 
   constructor(
     private route: Router,
@@ -39,28 +38,31 @@ export class PlansAndChannelsListComponent implements OnInit {
     this.channels = this.channelService.getChannels();
   }
 
-  onPlanSelected(val: PlansFields) {
-    this.planData = val;
+  // onPlanSelected(val: PlansFields) {
+  //   this.planData = val;
+  // }
+
+  // onChannelSelected(val: ChannelsFields) {
+  //   this.channelData = val;
+  // }
+  planAddButton(planData: number) {
+    this.total = this.total + planData;
+    this.planAddClick = this.planAddClick + 1;
+    console.log(this.total);
+    console.log(planData);
   }
 
-  onChannelSelected(val: ChannelsFields) {
-    this.channelData = val;
-  }
-  planAddButton() {
-    this.total = this.total + this.planData.planPrice;
-    this.planAddClick = this.planAddClick + 1;
-  }
-  planClearButton() {
-    this.total = this.total - this.planData.planPrice;
+  planClearButton(planData: number) {
+    this.total = this.total - planData;
     this.planAddClick = this.planAddClick - 1;
   }
 
-  channelAddButton() {
-    this.total = this.total + this.channelData.channelPrice;
+  channelAddButton(channelData: number) {
+    this.total = this.total + channelData;
     this.channelAddClick = this.channelAddClick + 1;
   }
-  channelClearButton() {
-    this.total = this.total - this.channelData.channelPrice;
+  channelClearButton(channelData) {
+    this.total = this.total - channelData;
     this.channelAddClick = this.channelAddClick - 1;
   }
 }
