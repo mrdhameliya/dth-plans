@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { PlansFields } from '../plans-fields';
 import { ChannelsService } from '../channels.service';
 import { ChannelsFields } from '../channels-fields';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogService } from '../dialog.service';
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-plans-and-channels-list',
@@ -26,8 +29,19 @@ export class PlansAndChannelsListComponent implements OnInit {
 
   constructor(
     private route: Router,
-    private channelService: ChannelsService
+    private channelService: ChannelsService,
+    public dialog: MatDialog,
   ) { }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogBoxComponent, {
+      width: '350px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Popup closed')
+    });
+  }
 
   mainScreen() {
     this.route.navigate(['/subscribedList']);

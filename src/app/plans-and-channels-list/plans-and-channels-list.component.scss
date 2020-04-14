@@ -1,3 +1,9 @@
+.main-div {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 4px;
+    padding: 4px;
+}
+
 .first-part {
     margin-bottom: 12px;
     padding: 10px;
@@ -19,9 +25,9 @@
 //     margin-left: 900px;
 // }
 
-
 .second-part {
     padding: 10px;
+    margin-top: 25px;
     margin-bottom: 12px;
     background-color: #f0f0f0;
     background-clip: border-box;
@@ -29,10 +35,37 @@
     border-style: ridge;
 }
 
+.inline-style-plan {
+    margin-right: 30px;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    // height: 100px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid blue;
+    border-style: groove;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.inline-style-channel {
+    margin-right: 30px;
+    display: inline-block;
+    text-align: center;
+    width: 170px;
+    // height: 100px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid blue;
+    border-style: groove;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
 .plan-part {
     display: flex;
 }
-
 
 // .plan-details {
 //     box-shadow: green;

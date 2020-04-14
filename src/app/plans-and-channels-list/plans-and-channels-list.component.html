@@ -1,47 +1,58 @@
-<div>
+<div class="main-div">
     <div>
-        <img src="https://www.dishtv.in/images/logo.png" alt="Dish TV Logo">
+        <img style="width: 120px; height: 45px" src="../../assets/Dish_TV.png" alt="Dish TV Logo">
     </div>
     <!-- <div>
-        <div class="container">
-            <div class="col-sm-4">
-                <h5>Grand Total: {{total}}</h5>
-            </div>
-            <div class="col-sm-4">
-                <button (click)="mainScreen()">Back</button>
-            </div>
+        <div>
+            <span>
+                <div align="left">
+                    <h5 style="display: inline-block; ">Grand Total: {{total}}</h5>
+                </div>
+                <div align="right">
+                    <button style="display: inline-block;" (click)="mainScreen()">Back</button>
+                </div>
+            </span>
         </div>
     </div> -->
 
+
     <div>
-        <div class="col-sm-6">
-            <div align="left">
-                <h5>Grand Total: {{total}}</h5>
+        <div>
+            <div class="col-sm-6">
+                <div align="left">
+                    <h5>Grand Total: {{total}}</h5>
+                    <button class="btn btn-primary" (click)="openDialog()">Checkout</button>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div align="right">
-                <button class="btn btn-primary" (click)="mainScreen()">Back</button>
+            <div class="col-sm-6">
+                <div align="right">
+                    <button class="btn btn-primary" (click)="mainScreen()">Back</button>
+                </div>
             </div>
         </div>
     </div>
+    <br>
+    <br />
 
-    <div>
+
+    <div class="second-part">
         <h3>Plans List : </h3>
-        <div class="second-part" *ngFor="let plan of plans">
+        <div class="inline-style-plan" *ngFor="let plan of plans">
             <div>
-                <h4>{{plan.planName}}</h4>
-                <img src="../../assets/dishTV.png" alt="Dish TV Logo">
-                <h5>Plan Price : {{plan.planPrice}}</h5>
-                <h5>Total Channels : {{plan.channelsCount}}</h5>
-                <button class="btn btn-primary mr-1" (click)="planAddButton(plan.planPrice)">Add</button>
+                <span>
+                    <h4>{{plan.planName}}</h4>
+                    <img style="width: 100px; height: 35px" src="../../assets/Dish_TV.png" alt="Dish TV Logo">
+                    <h5>Plan Price : {{plan.planPrice}}</h5>
+                    <h5>Total Channels : {{plan.channelsCount}}</h5>
+                    <button class="btn btn-primary mr-1" (click)="planAddButton(plan.planPrice)">Add</button>
+                </span>
             </div>
         </div>
     </div>
 
-    <div>
+    <div class="third-part">
         <h3>Channels List : </h3>
-        <div class="third-part" *ngFor="let channel of channels">
+        <div class="inline-style-channel" *ngFor="let channel of channels">
             <div>
                 <h4>{{channel.channelName}}</h4>
                 <!-- <img src="../../assets/dishTV.png" alt="Dish TV Logo"> -->
