@@ -1,7 +1,5 @@
 <div class="main-div">
-    <div>
-        <img style="width: 120px; height: 45px" src="../../assets/Dish_TV.png" alt="Dish TV Logo">
-    </div>
+    
     <!-- <div>
         <div>
             <span>
@@ -16,23 +14,21 @@
     </div> -->
 
 
-    <div>
-        <div>
-            <div class="col-sm-6">
-                <div align="left">
+    <div class="first-part">
+        <!-- <div> -->
+            <!-- <div class="col-sm-6"> -->
+                <div>
                     <h5>Grand Total: {{total}}</h5>
                     <button class="btn btn-primary" (click)="openDialog()">Checkout</button>
                 </div>
-            </div>
-            <div class="col-sm-6">
+            <!-- </div> -->
+            <!-- <div class="col-sm-6">
                 <div align="right">
                     <button class="btn btn-primary" (click)="mainScreen()">Back</button>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
     </div>
-    <br>
-    <br />
 
 
     <div class="second-part">
@@ -42,8 +38,8 @@
                 <span>
                     <h4>{{plan.planName}}</h4>
                     <img style="width: 100px; height: 35px" src="../../assets/Dish_TV.png" alt="Dish TV Logo">
-                    <h5>Plan Price : {{plan.planPrice}}</h5>
-                    <h5>Total Channels : {{plan.channelsCount}}</h5>
+                    <h5>Price : {{plan.planPrice}}*</h5>
+                    <h5>{{plan.channelsCount}} Channels</h5>
                     <button class="btn btn-primary mr-1" (click)="planAddButton(plan.planPrice)">Add</button>
                 </span>
             </div>
@@ -56,7 +52,7 @@
             <div>
                 <h4>{{channel.channelName}}</h4>
                 <!-- <img src="../../assets/dishTV.png" alt="Dish TV Logo"> -->
-                <h5>Channel Price : {{channel.channelPrice}}</h5>
+                <h5>Price : {{channel.channelPrice}}*</h5>
                 <button class="btn btn-primary mr-1" (click)="channelAddButton(channel.channelPrice)">Add</button>
             </div>
         </div>

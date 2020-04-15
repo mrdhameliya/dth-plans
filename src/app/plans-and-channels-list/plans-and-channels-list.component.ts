@@ -44,7 +44,7 @@ export class PlansAndChannelsListComponent implements OnInit {
   }
 
   mainScreen() {
-    this.route.navigate(['/subscribedList']);
+    this.route.navigate(['/subscribed-list']);
   }
 
   ngOnInit(): void {
@@ -52,13 +52,6 @@ export class PlansAndChannelsListComponent implements OnInit {
     this.channels = this.channelService.getChannels();
   }
 
-  // onPlanSelected(val: PlansFields) {
-  //   this.planData = val;
-  // }
-
-  // onChannelSelected(val: ChannelsFields) {
-  //   this.channelData = val;
-  // }
   planAddButton(planData: number) {
     this.total = this.total + planData;
     this.planAddClick = this.planAddClick + 1;
