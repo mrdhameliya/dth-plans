@@ -5,6 +5,6 @@
         <p>Enjoy with Dish TV.</p>
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button class="btn btn-primary" mat-button (click)="onCloseClick()">Close</button>
+        <button class="btn btn-primary" [routerLink]="['/subscribed-list']" (click)="onCloseClick()">Close</button>
     </mat-dialog-actions>
 </div>
