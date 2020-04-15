@@ -1,0 +1,35 @@
+<div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>
+                Enter VC No.* :
+                <input type="text" formControlName="vcNumber">
+            </label>
+        </div>
+        <div>
+            <label>
+                Mobile Number* :
+                <input type="text" formControlName="mobileNumber">
+            </label>
+        </div>
+        <div>
+            <label>
+                Enter OTP* :
+                <input type="text" formControlName="otp">
+            </label>
+        </div>
+        <div>
+            <a>Forget Password?</a>
+        </div>
+        <div>
+            <button class="btn" type="submit" [disabled]="!loginForm.valid">Login</button>
+        </div>
+        <div>
+            <label>New User?
+                <a [routerLink]="['/customer-registration']">Register Now</a>
+            </label>
+            
+        </div>
+        
+    </form>
+</div>
