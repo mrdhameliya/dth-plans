@@ -1,0 +1,57 @@
+<div>
+    <form [formGroup]="customerRegistrationForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>
+                Enter VC No.* :
+                <input type="text" formControlName="vcNumber">
+            </label>
+        </div>
+        <div>
+            <label>
+                Mobile Number* :
+                <input type="text" formControlName="mobileNumber">
+            </label>
+        </div>
+        <div>
+            <label>
+                Email* :
+                <input type="text" formControlName="email">
+            </label>
+        </div>
+        <div>
+            <label>
+                Alternate Mobile Number :
+                <input type="text" formControlName="alternateMobileNumber">
+            </label>
+        </div>
+        <div>
+            <label>
+                Password* :
+                <input type="text" formControlName="password">
+            </label>
+        </div>
+        <div>
+            <label>
+                Confirm Password* :
+                <input type="text" formControlName="confirmPassword">
+            </label>
+        </div>
+        <div>
+            <label>
+                Security Question* :
+                <input type="text" formControlName="securityQuestion">
+            </label>
+        </div>
+        <div>
+            <label>
+                Answer* :
+                <input type="text" formControlName="answer">
+            </label>
+        </div>
+        <div>
+            <button class="btn" type="submit" [disabled]="!customerRegistrationForm.valid">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+
+    </form>
+</div>
