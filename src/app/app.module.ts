@@ -7,19 +7,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChannelsService } from './channels.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule } from '@angular/material/dialog';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { DialogService } from './dialog.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { HomeScreenComponent } from './home-screen/home-screen.component';
+import { LoginAccountComponent } from './login-account/login-account.component';
+import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubscribedPlansAndChannelsComponent,
     PlansAndChannelsListComponent,
-    DialogBoxComponent
+    DialogBoxComponent,
+    HomeScreenComponent,
+    LoginAccountComponent,
+    CustomerRegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +36,10 @@ import {MatButtonModule} from '@angular/material/button';
     FormsModule,
     MatDialogModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
   ],
-  
+
   entryComponents: [
     DialogBoxComponent,
   ],
