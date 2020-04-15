@@ -1,15 +1,13 @@
 <div class="main-div">
-    <div>
-        <img style="width: 120px; height: 45px" src="../../assets/Dish_TV.png" alt="Dish TV Logo">
-    </div>
+    
     <div class="first-part">
         <div align="left">
             <h4>Subcriber ID: 101</h4>
             <h4>Subscriber Name: Mayur Dhameliya</h4>
         </div>
-        <div align="right">
+        <!-- <div align="right">
             <button class="btn btn-primary" (click)="openList()">Edit</button>
-        </div>
+        </div> -->
     </div>
 
     <div class="second-part">
@@ -23,8 +21,8 @@
                     <span>
                         <h4>{{plan.planName}}</h4>
                         <img style="width: 100px; height: 35px" src="../../assets/Dish_TV.png" alt="Dish TV Logo">
-                        <h5>Plan Price : {{plan.planPrice}}</h5>
-                        <h5>Total Channels : {{plan.channelsCount}}</h5>
+                        <h5>Price : {{plan.planPrice}}*</h5>
+                        <h5>{{plan.channelsCount}} Channels</h5>
                     </span>
                 </div>
             </div>

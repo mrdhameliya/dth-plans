@@ -20,7 +20,7 @@ export class SubscribedPlansAndChannelsComponent implements OnInit {
   ) { }
 
   openList() {
-    this.route.navigate(['/plansList']);
+    this.route.navigate(['/plans-list']);
   }
 
   ngOnInit(): void {
