@@ -8,7 +8,7 @@ import { DialogService } from '../dialog.service';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 
 @Component({
-  selector: 'app-plans-and-channels-list',
+  selector: 'dth-plans-and-channels-list',
   templateUrl: './plans-and-channels-list.component.html',
   styleUrls: ['./plans-and-channels-list.component.scss']
 })

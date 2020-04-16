@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home-screen',
+  selector: 'dth-home-screen',
   templateUrl: './home-screen.component.html',
   styleUrls: ['./home-screen.component.scss']
 })
