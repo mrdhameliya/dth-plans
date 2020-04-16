@@ -1,57 +1,133 @@
 <div>
     <form [formGroup]="customerRegistrationForm" (ngSubmit)="onSubmit()">
         <div>
-            <label>
-                Enter VC No.* :
-                <input type="text" formControlName="vcNumber">
-            </label>
-        </div>
-        <div>
-            <label>
-                Mobile Number* :
-                <input type="text" formControlName="mobileNumber">
-            </label>
-        </div>
-        <div>
-            <label>
-                Email* :
-                <input type="text" formControlName="email">
-            </label>
-        </div>
-        <div>
-            <label>
-                Alternate Mobile Number :
-                <input type="text" formControlName="alternateMobileNumber">
-            </label>
-        </div>
-        <div>
-            <label>
-                Password* :
-                <input type="text" formControlName="password">
-            </label>
-        </div>
-        <div>
-            <label>
-                Confirm Password* :
-                <input type="text" formControlName="confirmPassword">
-            </label>
-        </div>
-        <div>
-            <label>
-                Security Question* :
-                <input type="text" formControlName="securityQuestion">
-            </label>
-        </div>
-        <div>
-            <label>
-                Answer* :
-                <input type="text" formControlName="answer">
-            </label>
-        </div>
-        <div>
-            <button class="btn" type="submit" [disabled]="!customerRegistrationForm.valid">Submit</button>
-            <button type="reset">Reset</button>
-        </div>
+            <div class="form-body">
+                <label>Enter VC No.* :</label>
+                <div>
+                    <input class="input-box" type="text" formControlName="vcNumber">
+                </div>
+                <div *ngIf="f.vcNumber.invalid && (f.vcNumber.dirty || f.vcNumber.touched)" class="alert-danger input-box">
+                    <div *ngIf="f.vcNumber.errors.required">
+                        Name is required.
+                    </div>
+                    <div *ngIf="f.vcNumber.errors.minlength || f.vcNumber.errors.maxlength">
+                        Name must be 12 character long.
+                    </div>
+                </div>
+            </div>
 
+            <div class="form-body">
+                <label>Mobile Number* :</label>
+                <div>
+                    <input class="input-box" type="text" formControlName="mobileNumber">
+                </div>
+                <div *ngIf="f.mobileNumber.invalid && (f.mobileNumber.dirty || f.mobileNumber.touched)"
+                    class="alert-danger input-box">
+                    <div *ngIf="f.mobileNumber.errors.required">
+                        Mobile Number is required.
+                    </div>
+                    <div *ngIf="f.mobileNumber.errors.pattern">
+                        Please, Enter 10 digit Mobile Number.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-body">
+                <label>Email* :</label>
+                <div>
+                    <input class="input-box" type="email" formControlName="email">
+                </div>
+                <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="alert-danger input-box">
+                    <div *ngIf="f.email.errors.required">
+                        Email is required.
+                    </div>
+                    <div *ngIf="f.email.errors.email">
+                        Please, Enter Email in proper format. Example: abc@xyz.com.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-body">
+                <label>Alternate Mobile Number :</label>
+                <div>
+                    <input class="input-box" type="text" formControlName="alternateMobileNumber">
+                </div>
+                <div *ngIf="f.alternateMobileNumber.invalid && (f.alternateMobileNumber.dirty || f.alternateMobileNumber.touched)"
+                    class="alert-danger input-box">
+                    <div *ngIf="f.alternateMobileNumber.errors.pattern">
+                        Please, Enter 10 digit Mobile Number.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-body">
+                <label>Password* :</label>
+                <div>
+                    <input class="input-box" type="password" formControlName="password">
+                </div>
+                <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="alert-danger input-box">
+                    <div *ngIf="f.password.errors.required">
+                        Password is required.
+                    </div>
+                    <div *ngIf="f.password.errors.minlength">
+                        Password must be at least 8 characters.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-body">
+                <label>Confirm Password* :</label>
+                <div>
+                    <input class="input-box" type="password" formControlName="confirmPassword">
+                </div>
+                <div *ngIf="f.confirmPassword.invalid && (f.confirmPassword.dirty || f.confirmPassword.touched)"
+                    class="alert-danger input-box">
+                    <div *ngIf="f.confirmPassword.errors.required">
+                        Confirm Password is required.
+                    </div>
+                    <div *ngIf="f.confirmPassword.errors.mustMatch">
+                        Confirm password must be same as Password.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-body">
+                <label>Security Question* :</label>
+                <div>
+                    <select class="input-box" formControlName="securityQuestion">
+                        <option *ngFor="let question of securityQuestions" [ngValue]="question">
+                            {{ question.securityQuestion }}
+                        </option>
+                    </select>
+                </div>
+                <div *ngIf="f.securityQuestion.invalid && (f.securityQuestion.dirty || f.securityQuestion.touched)"
+                    class="alert-danger input-box">
+                    <div *ngIf="f.securityQuestion.errors.required">
+                        Please, Select one question.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-body">
+                <label>Answer* :</label>
+                <div>
+                    <input class="input-box" type="text" formControlName="answer">
+                </div>
+                <div *ngIf="f.answer.invalid && (f.answer.dirty || f.answer.touched)" class="alert-danger input-box">
+                    <div *ngIf="f.answer.errors.required">
+                        Answer is required.
+                    </div>
+                    <div *ngIf="f.answer.errors.minlength">
+                        Answer must be 2 character long.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-body">
+                <button class="btn btn-primary" type="submit"
+                    [disabled]="!customerRegistrationForm.valid">Submit</button>
+                <button class="btn btn-primary" type="reset">Reset</button>
+            </div>
+        </div>
     </form>
 </div>
