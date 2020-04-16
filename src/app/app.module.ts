@@ -16,6 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { LoginAccountComponent } from './login-account/login-account.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
+import { MainScreenContentComponent } from './main-screen-content/main-screen-content.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CustomerRegistrationComponent } from './customer-registration/customer-
     DialogBoxComponent,
     HomeScreenComponent,
     LoginAccountComponent,
-    CustomerRegistrationComponent
+    CustomerRegistrationComponent,
+    MainScreenContentComponent
   ],
   imports: [
     BrowserModule,
