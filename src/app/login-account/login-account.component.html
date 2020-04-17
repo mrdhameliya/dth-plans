@@ -1,4 +1,4 @@
-<div>
+<div class="main-div">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-body">
             <label>Enter VC No.* :</label>
@@ -46,7 +46,7 @@
             <a>Forget Password?</a>
         </div>
         <div class="form-body">
-            <button [routerLink]="['/subscribed-list']" class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+            <button [routerLink]="['/subscribed-list']" class="btn" type="submit" [disabled]="!loginForm.valid">Login</button>
         </div>
         <div class="form-body">
             <label>New User?
