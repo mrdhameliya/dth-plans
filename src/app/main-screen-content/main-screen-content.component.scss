@@ -1,0 +1,39 @@
+.img-service {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.m-image {
+    margin-bottom: 15px;;
+}
+
+.second-part {
+    margin-top: 30px;
+}
+
+.service-block {
+    margin-right: 70px;
+    display: inline-block;
+}
+
+.dish-combos-icon {
+    margin-right: 100px;
+    display: inline-block;
+}
+
+button {
+    color: #fff;
+    background-color: #363c3f;
+}
+button:hover, button:focus, button:active, button.active {
+    color: #fff;
+    background-color: #dd470ce0;
+}
+
+hr {
+    width: 80%;
+}
+.orange-font {
+    color: #dd470ce0
+}
