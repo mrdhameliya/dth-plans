@@ -5,10 +5,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { LoginAccountComponent } from './login-account/login-account.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
+import { MainScreenContentComponent } from './main-screen-content/main-screen-content.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/home-screen', pathMatch: 'full' },
-    { path: 'home-screen', component: HomeScreenComponent },
+    { path: '', redirectTo: '/main-screen-content', pathMatch: 'full' },
+    { path: 'main-screen-content', component: MainScreenContentComponent },
+    { path: 'home-screen', component: MainScreenContentComponent },
     { path: 'subscribed-list', component: SubscribedPlansAndChannelsComponent },
     { path: 'plans-list', component: PlansAndChannelsListComponent },
     { path: 'login-account', component: LoginAccountComponent },
