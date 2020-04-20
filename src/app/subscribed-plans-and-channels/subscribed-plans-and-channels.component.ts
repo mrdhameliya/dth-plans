@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ChannelsService } from '../channels.service';
+import { ChannelsService } from '../services/channels.service';
 import { ChannelsFields } from '../channels-fields';
 import { PlansFields } from '../plans-fields';
 
 @Component({
-  selector: 'app-subscribed-plans-and-channels',
+  selector: 'dth-subscribed-plans-and-channels',
   templateUrl: './subscribed-plans-and-channels.component.html',
   styleUrls: ['./subscribed-plans-and-channels.component.scss']
 })

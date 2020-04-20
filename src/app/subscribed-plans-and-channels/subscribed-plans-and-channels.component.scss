@@ -122,3 +122,15 @@ button1:hover {
     background-color: #337414;
     color: white;
 }
+button {
+    color: #fff;
+    background-color: #363c3f;
+}
+button:hover, button:focus, button:active, button.active {
+    color: #fff;
+    background-color: #dd470ce0;
+}
+
+.orange-font {
+    color: #dd470ce0
+}
