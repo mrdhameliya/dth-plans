@@ -5,12 +5,12 @@ import { SubscribedPlansAndChannelsComponent } from './subscribed-plans-and-chan
 import { PlansAndChannelsListComponent } from './plans-and-channels-list/plans-and-channels-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ChannelsService } from './channels.service';
+import { ChannelsService } from './services/channels.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule } from '@angular/material/dialog';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
-import { DialogService } from './dialog.service';
+import { DialogService } from './services/dialog.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
