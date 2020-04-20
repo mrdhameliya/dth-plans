@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlansFields } from '../plans-fields';
-import { ChannelsService } from '../channels.service';
+import { ChannelsService } from '../services/channels.service';
 import { ChannelsFields } from '../channels-fields';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogService } from '../dialog.service';
+import { DialogService } from '../services/dialog.service';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 
 @Component({
@@ -19,9 +19,6 @@ export class PlansAndChannelsListComponent implements OnInit {
   channelAddClick = 0;
   plans: PlansFields[];
   channels: ChannelsFields[];
-
-  selectedPlan: any = {};
-  selectedChannel: any = {};
 
   planData: any;
   channelData: any;
@@ -43,9 +40,6 @@ export class PlansAndChannelsListComponent implements OnInit {
     });
   }
 
-  mainScreen() {
-    this.route.navigate(['/subscribed-list']);
-  }
 
   ngOnInit(): void {
     this.plans = this.channelService.getPlans();
@@ -59,17 +53,12 @@ export class PlansAndChannelsListComponent implements OnInit {
     console.log(planData);
   }
 
-  planClearButton(planData: number) {
-    this.total = this.total - planData;
-    this.planAddClick = this.planAddClick - 1;
-  }
-
   channelAddButton(channelData: number) {
     this.total = this.total + channelData;
     this.channelAddClick = this.channelAddClick + 1;
   }
-  channelClearButton(channelData) {
-    this.total = this.total - channelData;
-    this.channelAddClick = this.channelAddClick - 1;
+
+  clearTotal() {
+    this.total = 0;
   }
 }
