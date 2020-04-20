@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
 import { SecurityQuestion } from '../models/security-questions.model';
 import { MustMatch } from '../custom-helper/password-match.validator';
+import { ChannelsService } from '../services/channels.service';
+import { Customer } from '../models/customer.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dth-customer-registration',
@@ -10,6 +13,8 @@ import { MustMatch } from '../custom-helper/password-match.validator';
 })
 export class CustomerRegistrationComponent implements OnInit {
 
+  customer: Customer[];
+
   securityQuestions: SecurityQuestion[] = [
     { id: 1, securityQuestion: 'First car you own' },
     { id: 2, securityQuestion: 'Your first school name' },
@@ -17,7 +22,10 @@ export class CustomerRegistrationComponent implements OnInit {
     { id: 4, securityQuestion: 'Your favourite crickter' }
   ];
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    public channelService: ChannelsService,
+    public route: Router) { }
 
   customerRegistrationForm = this.fb.group({
     vcNumber: ['', [Validators.required, Validators.minLength(12), Validators.maxLength(12)]],
@@ -37,6 +45,23 @@ export class CustomerRegistrationComponent implements OnInit {
 
   onSubmit() {
     console.warn(this.customerRegistrationForm.value);
+    this.channelService.save(this.customerRegistrationForm.value).subscribe(data => {
+      // this.customer = data;
+      console.log(this.customer);
+    });
+  }
+
+  setDefault() {
+    this.customerRegistrationForm.patchValue({
+      vcNumber: 180021153333,
+      mobileNumber: 9879876565,
+      email: 'email@gmail.com',
+      alternateMobileNumber: 9898556655,
+      password: 987654321,
+      confirmPassword: 987654321,
+      securityQuestion: this.securityQuestions[0],
+      answer: 'BMW'
+    });
   }
 
   get f() {
