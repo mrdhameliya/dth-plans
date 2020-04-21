@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
 import { SecurityQuestion } from '../models/security-questions.model';
 import { MustMatch } from '../custom-helper/password-match.validator';
@@ -41,6 +41,7 @@ export class CustomerRegistrationComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.customer = this.channelService.getCustomer();
   }
 
   onSubmit() {
@@ -51,18 +52,6 @@ export class CustomerRegistrationComponent implements OnInit {
     });
   }
 
-  setDefault() {
-    this.customerRegistrationForm.patchValue({
-      vcNumber: 180021153333,
-      mobileNumber: 9879876565,
-      email: 'email@gmail.com',
-      alternateMobileNumber: 9898556655,
-      password: 987654321,
-      confirmPassword: 987654321,
-      securityQuestion: this.securityQuestions[0],
-      answer: 'BMW'
-    });
-  }
 
   get f() {
     return this.customerRegistrationForm.controls;
