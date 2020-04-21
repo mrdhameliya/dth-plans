@@ -1,0 +1,29 @@
+.main-div {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 4px;
+    padding: 4px;
+}
+.input-box {
+    width: 100px;
+    height: 40px;
+    margin-top: 25px;
+    width: 40%;
+    border-radius: 30px;
+    border: 1px solid rgb(87, 83, 83);
+}
+.line-block {
+    background-color: #fe5e00;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+button {
+    color: #fff;
+    background-color: #363c3f;
+}
+button:hover, button:focus, button:active, button.active {
+    color: #fff;
+    background-color: #fe5e00;
+}
