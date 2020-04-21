@@ -6,6 +6,7 @@ import { CHANNELS } from '../mock-channels';
 import { PlansFields } from '../plans-fields';
 import { PLANS } from '../mock-plans';
 import { Customer } from '../models/customer.model';
+import { CUSTOMER } from '../mock-customer';
 
 
 @Injectable()
@@ -22,6 +23,10 @@ export class ChannelsService {
 
     getPlans(): PlansFields[] {
         return PLANS;
+    }
+
+    getCustomer(): Customer[] {
+        return CUSTOMER;
     }
 
     save(customer: Customer): Observable<Customer> {
