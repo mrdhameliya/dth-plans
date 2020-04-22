@@ -7,10 +7,10 @@
             </div>
             <div *ngIf="f.vcNumber.invalid && (f.vcNumber.dirty || f.vcNumber.touched)" class="alert-danger input-box">
                 <div *ngIf="f.vcNumber.errors.required">
-                    Name is required.
+                    VC number is required.
                 </div>
                 <div *ngIf="f.vcNumber.errors.minlength || f.vcNumber.errors.maxlength">
-                    Name must be 12 character long.
+                    VC number must be 12 character long.
                 </div>
             </div>
         </div>
