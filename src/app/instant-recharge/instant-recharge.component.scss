@@ -4,26 +4,127 @@
     margin: 4px;
     padding: 4px;
 }
+.flex-display {
+    display: flex;
+}
+
+.main-block {
+    width: 80%;
+}
+.side-block {
+    padding-top: 15px;
+    width: 20%;
+    background-color: #363c3f;
+    color: white;
+}
+
+.font-style {
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+}
+
 .input-box {
+    font-size: 24px;
+    text-align: center;
     width: 100px;
     height: 40px;
     margin-top: 25px;
     width: 40%;
-    border-radius: 30px;
-    border: 1px solid rgb(87, 83, 83);
+    outline: none;
+    border-radius: 25px;
+    border: 1px solid rgb(218, 214, 206);
 }
-.line-block {
+.line-block-orange {
     background-color: #fe5e00;
     text-align: center;
     color: white;
     padding: 20px;
 }
+.account-details {
+    background-color: #fe5e00;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+.line-block-first {
+    background-color: #a09a98;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+.line-block-second {
+    background-color: #dfd8d5;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
 
+a {
+    display: block;
+}
+.alert-danger {
+    box-sizing: border-box;
+    border-radius: 25px;
+    width: 40%;
+}
 button {
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 25px;
     color: #fff;
     background-color: #363c3f;
+    border-radius: 25px;
 }
 button:hover, button:focus, button:active, button.active {
     color: #fff;
     background-color: #fe5e00;
+}
+
+.orange-font {
+    color: #fe5e00;
+    font-weight: bold;
+}
+
+.amount-block {
+    margin-top: 20px;
+    display: block;
+    width: 50%;
+}
+
+ul {
+    width: 50%;
+}
+li {
+    display: block;   
+}
+
+.recharge-amount {
+    margin-top: 50px;
+    box-sizing: border-box;
+    width: 35%;
+    color: white;
+    border-radius: 25px;
+    background-color: #363c3f;
+}
+
+.offer-block {
+    padding: 5px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    width: 20%;
+    color: black;
+    border: 1px solid rgb(218, 214, 206);
+}
+
+.payment-option {
+    margin-top: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    color: black;
+    border-radius: 25px;
+    border: 1px solid rgb(218, 214, 206);
+    background-color: white;
 }

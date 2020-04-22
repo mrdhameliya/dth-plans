@@ -1,13 +1,135 @@
 <!-- Custom VC Number: 02511778984 -->
 <div class="main-div">
-    <form>
-        <div>
-            <div class="line-block">
-                <h6>Enter VC Number</h6>
-            </div>
+    <div [ngClass]="{'flex-display': click1==1}">
+        <div *ngIf="click1==1" class="side-block">
             <div align="center">
-                <input class="input-box" type="text" [formControl]="vcNumber">
+                <h6 class="orange-font">Welcome,</h6>
+                Mayur Dhameliya
+            </div>
+            <div align="center">VC Number <span>02511778984</span></div>
+            <div class="account-details">
+                <h6>Account Details</h6>
+            </div>
+            <div align="center" class="font-style">
+                <div>
+                    <span style="float: left;">Recharge Date</span>
+                    <span style="float: right;">08/08/2020</span>
+                </div>
+                <br>
+                <div>
+                    <span style="float: left;">Switch-off Date</span>
+                    <span style="float: right;">07/10/2020</span>
+                </div>
+                <br>
+                <div>
+                    <span style="float: left;">Account Balance</span>
+                    <span style="float: right;">₹1512.00</span>
+                </div>
+                <br>
+                <div>
+                    <span style="float: left;">Outstanding Balance</span>
+                    <span style="float: right;">₹0</span>
+                </div>
+                <br>
             </div>
         </div>
-    </form>
+
+        <div [ngClass]="{'main-block': click1==1}">
+            <form>
+                <div align="center">
+                    <a (click)="toggle1()">
+                        <div class="line-block-orange" [ngClass]="{'line-block-first': block1==false}">
+                            <h6>Enter VC Number</h6>
+                        </div>
+                    </a>
+                    <div align="center" *ngIf="block1">
+                        <input class="input-box" type="text" [formControl]="vcNumber">
+                        <div *ngIf="vcNumber.invalid && (vcNumber.dirty || vcNumber.touched)" class="alert-danger">
+                            <div *ngIf="vcNumber.errors.required">
+                                Name is required.
+                            </div>
+                            <div *ngIf="vcNumber.errors.minlength || vcNumber.errors.maxlength">
+                                Name must be 12 character long.
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn" (click)="clickFun1()" [disabled]="vcNumber.invalid">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div align="center">
+                <a (click)="toggle2()">
+                    <div class="line-block-orange" [ngClass]="{'line-block-second': block2==false}">
+                        <h6>Verify/Edit Amount</h6>
+                    </div>
+                </a>
+                <div align="center" *ngIf="block2">
+                    <div align="center" class="amount-block">
+                        <div>
+                            <span style="float: left;">Account Balance</span>
+                            <span style="float: right;">₹1512.00</span>
+                        </div>
+                        <br>
+                        <div>
+                            <span style="float: left;">Switch-off Date</span>
+                            <span style="float: right;">07/10/2020</span>
+                        </div>
+                    </div>
+                    <div class="recharge-amount">
+                        <h4>₹ 289</h4>
+                    </div>
+                    <div>
+                        <h5 class="orange-font">Offers For You</h5>
+                        <a>
+                            <div class="offer-block">
+                                <div>
+                                    <h6>Get 7 Days Free</h6>
+                                    <p>Get 7 Days Entertainment Free On 3 Months Recharge.Tnc</p>
+                                </div>
+                                <div>
+                                    <h6>₹791</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <button class="btn" (click)="clickFun2()">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+            <div align="center">
+                <a (click)="toggle3()">
+                    <div class="line-block-orange" [ngClass]="{'line-block-first': block3==false}">
+                        <h6>Payment</h6>
+                    </div>
+                </a>
+                <div align="center" *ngIf="block3">
+                    <div>
+                        <h5 class="orange-font">Mode of Payment</h5>
+                    </div>
+                    <div>
+                        <ul>
+                            <a>
+                                <li class="payment-option">Credit Card</li>
+                            </a>
+                            <a>
+                                <li class="payment-option">Debit Card</li>
+                            </a>
+                            <a>
+                                <li class="payment-option">Net Banking</li>
+                            </a>
+                            <a>
+                                <li class="payment-option">Wallet Recharge</li>
+                            </a>
+                            <a>
+                                <li class="payment-option">UPI</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
