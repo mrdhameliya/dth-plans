@@ -1,0 +1,116 @@
+<div>
+    <div>
+        <img src="../../assets/email-us-banner.jpg" alt="Email">
+    </div>
+    <div class="main-div">
+
+        <div style="display: flex;">
+            <dth-contact-us></dth-contact-us>
+
+            <div class="right-block">
+
+                <div>
+                    <div>
+                        <h6 style="color: #464646;">Write to us for any queries or suggestions.</h6>
+                    </div>
+
+                    <div class="block">
+                        <div class="form-header">
+                            <span style="float: left;">Please fill the form given below</span>
+                            <span style="float: right;">(*) Fields are Mandatory</span>
+                        </div>
+                        <br>
+                        <hr><br>
+                        <form [formGroup]="emailUsForm">
+                            <div>
+                                <div>
+                                    <div style="float: left; width: 47%;">
+                                        <div>
+                                            <input class="input-box" type="text" placeholder="Mobile Number*"
+                                                formControlName="mobileNumber">
+                                        </div>
+                                        <div *ngIf="f.mobileNumber.invalid && (f.mobileNumber.dirty || f.mobileNumber.touched)" class="validation">
+                                            <div *ngIf="f.mobileNumber.errors.required">
+                                                Mobile Number is required.
+                                            </div>
+                                            <div *ngIf="f.mobileNumber.errors.pattern">
+                                                Please, Enter 10 digit Mobile Number.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="float: right; width: 47%;">
+                                        <div>
+                                            <input class="input-box" type="text" placeholder="Email ID*"
+                                                formControlName="email">
+                                        </div>
+                                        <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)"
+                                            class="validation">
+                                            <div *ngIf="f.email.errors.required">
+                                                Email is required.
+                                            </div>
+                                            <div *ngIf="f.email.errors.email">
+                                                Please, Enter Valid Email.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br><br>
+
+                                <div>
+                                    <div style="float: left; width: 30%; margin-right: -5px;">
+                                        <div>
+                                            <input class="input-box" type="text" placeholder="Name*"
+                                                formControlName="name">
+                                        </div>
+                                        <div *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)"
+                                            class="validation">
+                                            <div *ngIf="f.name.errors.required">
+                                                Name is required.
+                                            </div>
+                                            <div *ngIf="f.name.errors.minlength">
+                                                Name must be 2 character long.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="float: right; width: 30%; margin-left: 30px;">
+                                        <div>
+                                            <input class="input-box" type="text" placeholder="Alternate Contact No."
+                                                formControlName="alternateMobileNumber">
+                                        </div>
+                                    </div>
+                                    <div style="float: right; width: 30%; margin-left: 30px;">
+                                        <div>
+                                            <input class="input-box" type="text" placeholder="State"
+                                                formControlName="state">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br><br>
+                                <div>
+                                    <div>
+                                        <textarea class="input-box" type="text" placeholder="Please Describe Briefly*"
+                                            formControlName="description"></textarea>
+                                    </div>
+                                    <div
+                                        *ngIf="f.description.invalid && (f.description.dirty || f.description.touched)" class="validation"> 
+                                        <div *ngIf="f.description.errors.required">
+                                            Description is required.
+                                        </div>
+                                        <div *ngIf="f.descripation.errors.minlength">
+                                            Description must be 5 character long.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="btn" type="submit" [disabled]="!emailUsForm.valid">Submit</button>
+                                    <button class="btn" type="reset">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
