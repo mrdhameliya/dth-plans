@@ -1,0 +1,21 @@
+a {
+    color: #464646;
+}
+a:hover {
+    color: #fe5e00;
+}
+
+.left-block {
+    margin-left: 60px;
+}
+
+.list-view {
+    margin-top: 30px;
+    font-weight: bold;
+}
+.vertical-line {
+    margin: 30px 0 0 70px;
+    border-left: 1px solid #ddd;
+    height: 200px;
+    display: flex;
+}
