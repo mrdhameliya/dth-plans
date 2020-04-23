@@ -8,9 +8,15 @@ import { CustomerRegistrationComponent } from './customer-registration/customer-
 import { MainScreenContentComponent } from './main-screen-content/main-screen-content.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { InstantRechargeComponent } from './instant-recharge/instant-recharge.component';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { EmailUsComponent } from './email-us/email-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/main-screen-content', pathMatch: 'full' },
+    { path: 'contact-us', component: ContactUsComponent },
+    { path: 'email-us', component: EmailUsComponent },
+    { path: 'contact-info', component: ContactInfoComponent },
     { path: 'instant-recharge', component: InstantRechargeComponent },
     { path: 'customer-profile', component: CustomerProfileComponent },
     { path: 'main-screen-content', component: MainScreenContentComponent },

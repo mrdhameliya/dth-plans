@@ -19,6 +19,9 @@ import { CustomerRegistrationComponent } from './customer-registration/customer-
 import { MainScreenContentComponent } from './main-screen-content/main-screen-content.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { InstantRechargeComponent } from './instant-recharge/instant-recharge.component';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { EmailUsComponent } from './email-us/email-us.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { InstantRechargeComponent } from './instant-recharge/instant-recharge.co
     CustomerRegistrationComponent,
     MainScreenContentComponent,
     CustomerProfileComponent,
-    InstantRechargeComponent
+    InstantRechargeComponent,
+    ContactInfoComponent,
+    ContactUsComponent,
+    EmailUsComponent
   ],
   imports: [
     BrowserModule,

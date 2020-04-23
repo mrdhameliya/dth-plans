@@ -3,14 +3,15 @@
         <div>
             <nav>
                 <div style="float:left">
-                    <img style="width: 120px; height: 45px" src="../../assets/Dish_TV.png" alt="Dish TV Logo">
+                    <a [routerLink]="'/main-screen-content'"><img style="width: 120px; height: 45px" src="../../assets/Dish_TV.png" alt="Dish TV Logo"></a>
                 </div>
                 <div style="float:right">
                     <ul>
                         <li><a [routerLink]="'/instant-recharge'">Instant Recharge</a></li>
                         <li><a [routerLink]="['/main-screen-content']">Home</a></li>
                         <li><a [routerLink]="['/plans-list']">Plans & Channels</a></li>
-                        <li><a [routerLink]="['/subscribed-list']">Profile</a></li>
+                        <li><a [routerLink]="['/subscribed-list']"> My Profile</a></li>
+                        <li><a [routerLink]="'contact-info'">Contact Info</a></li>
                         <li><a [routerLink]="['/login-account']">Consumer Corner</a></li>
                     </ul>
                 </div>
