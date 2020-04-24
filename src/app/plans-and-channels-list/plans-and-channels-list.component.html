@@ -7,19 +7,19 @@
                 <button class="btn" (click)="openDialog()">Checkout</button>
                 <button class="btn" (click)="clearTotal()">Clear</button>
              </div>
-
         </div>
     </div>
 
     <div class="second-part">
-        <h4>Plans List : </h4>
-        <div class="inline-style-plan" *ngFor="let plan of plans">
+        <h5>Plans List : </h5>
+        <div class="inline-style-plan" *ngFor="let plan of plans; let i = index">
             <div>
                 <span>
                     <h6>{{plan.planName}}</h6>
                     <img style="width: 100px; height: 35px" src="../../assets/Dish_TV.png" alt="Dish TV Logo">
                     <h6>Price : ₹{{plan.planPrice}}*</h6>
                     <h6>{{plan.channelsCount}} Channels</h6>
+                    <button class="round" (click)="openModal(i)">View Details</button>
                     <button class="btn mr-1" (click)="planAddButton(plan.planPrice)">Add</button>
                 </span>
             </div>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="third-part">
-        <h4>Channels List : </h4>
+        <h5>Channels List : </h5>
         <div class="inline-style-channel" *ngFor="let channel of channels">
             <div>
                 <h5>{{channel.channelName}}</h5>
