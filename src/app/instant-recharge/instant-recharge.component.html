@@ -46,10 +46,10 @@
                         <input class="input-box" type="text" [formControl]="vcNumber">
                         <div *ngIf="vcNumber.invalid && (vcNumber.dirty || vcNumber.touched)" class="alert-danger">
                             <div *ngIf="vcNumber.errors.required">
-                                Name is required.
+                                VC Number is required.
                             </div>
                             <div *ngIf="vcNumber.errors.minlength || vcNumber.errors.maxlength">
-                                Name must be 12 character long.
+                                VC Number must be 12 digits long.
                             </div>
                         </div>
                         <div>
