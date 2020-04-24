@@ -3,23 +3,37 @@
         <div class="form-body">
             <label>Enter VC No.* :</label>
             <div>
-                <input class="input-box" type="text" formControlName="vcNumber">
+                <input class="input-box" type="text" placeholder="V.C. Number" formControlName="vcNumber"
+                    [ngClass]="{ 'is-invalid': submitted && f.vcNumber.errors}">
+                <div *ngIf="submitted && f.vcNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.vcNumber.errors.required">VC number is required.</div>
+                    <div *ngIf="f.vcNumber.errors.minlength || f.vcNumber.errors.maxlength">VC number must be 12
+                        digits long.</div>
+                </div>
             </div>
-            <div *ngIf="f.vcNumber.invalid && (f.vcNumber.dirty || f.vcNumber.touched)" class="alert-danger input-box">
+            <!-- <div *ngIf="f.vcNumber.invalid && (f.vcNumber.dirty || f.vcNumber.touched)" class="alert-danger input-box">
                 <div *ngIf="f.vcNumber.errors.required">
                     VC number is required.
                 </div>
                 <div *ngIf="f.vcNumber.errors.minlength || f.vcNumber.errors.maxlength">
                     VC number must be 12 character long.
                 </div>
-            </div>
+            </div> -->
+            <!-- <div *ngIf="f.vcNumber.hasError('required') && myForm.submitted">VC Number is required</div> -->
+            <!-- <div *ngIf="f.vcNumber.has-feedback('invalid') && myform.submitted">VC number must be 12 character long.</div> -->
         </div>
         <div class="form-body">
             <label>Mobile Number* :</label>
             <div>
-                <input class="input-box" type="text" formControlName="mobileNumber">
+                <input class="input-box" type="text" placeholder="Mobile Number" formControlName="mobileNumber"
+                    [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors}">
+                <div *ngIf="submitted && f.mobileNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.mobileNumber.errors.required">Mobile Number is required.</div>
+                    <div *ngIf="f.mobileNumber.errors.pattern">Please, Enter 10 digit
+                        Mobile Number.</div>
+                </div>
             </div>
-            <div *ngIf="f.mobileNumber.invalid && (f.mobileNumber.dirty || f.mobileNumber.touched)"
+            <!-- <div *ngIf="f.mobileNumber.invalid && (f.mobileNumber.dirty || f.mobileNumber.touched)"
                 class="alert-danger input-box">
                 <div *ngIf="f.mobileNumber.errors.required">
                     Mobile Number is required.
@@ -27,26 +41,29 @@
                 <div *ngIf="f.mobileNumber.errors.pattern">
                     Please, Enter 10 digit Mobile Number.
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="form-body">
             <label>Enter OTP* :</label>
             <div>
-                <input class="input-box" type="text" formControlName="otp">
+                <input class="input-box" type="text" placeholder="Enter a OTP" formControlName="otp"
+                    [ngClass]="{ 'is-invalid': submitted && f.otp.errors}">
+                <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
+                    <div *ngIf="f.otp.errors.required">OTP is required.</div>
+                </div>
             </div>
-            <div *ngIf="f.otp.invalid && (f.otp.dirty || f.otp.touched)"
-                class="alert-danger input-box">
+            <!-- <div *ngIf="f.otp.invalid && (f.otp.dirty || f.otp.touched)" class="alert-danger input-box">
                 <div *ngIf="f.otp.errors.required">
                     OTP is required.
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="form-body">
             <a>Forget Password?</a>
         </div>
         <div class="form-body">
-            <button [routerLink]="['/subscribed-list']" class="btn" type="submit" [disabled]="!loginForm.valid">Login</button>
+            <button class="btn" type="submit">Login</button>
         </div>
         <div class="form-body">
             <label>New User?
