@@ -50,8 +50,13 @@ export class CustomerRegistrationComponent implements OnInit {
       // this.customer = data;
       console.log(this.customer);
     });
+    alert('Form submitted!');
+    this.route.navigate(['/main-screen-content']);
   }
 
+  onReset() {
+    alert('Form Reset Successfully !')
+  }
 
   get f() {
     return this.customerRegistrationForm.controls;
