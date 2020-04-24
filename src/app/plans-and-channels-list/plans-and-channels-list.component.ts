@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import { PlansFields } from '../plans-fields';
 import { ChannelsService } from '../services/channels.service';
 import { ChannelsFields } from '../channels-fields';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogClose, MatDialogConfig } from '@angular/material/dialog';
 import { DialogService } from '../services/dialog.service';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+import { PlanDetailsModalComponent } from '../plan-details-modal/plan-details-modal.component';
 
 @Component({
   selector: 'dth-plans-and-channels-list',
@@ -36,7 +37,7 @@ export class PlansAndChannelsListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('Popup closed')
+      console.log('Popup closed');
     });
   }
 
@@ -56,6 +57,17 @@ export class PlansAndChannelsListComponent implements OnInit {
   channelAddButton(channelData: number) {
     this.total = this.total + channelData;
     this.channelAddClick = this.channelAddClick + 1;
+  }
+
+  openModal(index: number) {
+    // if (index === 0){
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = false;
+      dialogConfig.width = '800px';
+      dialogConfig.height = '500px';
+      this.dialog.open(PlanDetailsModalComponent, dialogConfig);
+    // }
   }
 
   clearTotal() {
