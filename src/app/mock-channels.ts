@@ -4,37 +4,37 @@ export const CHANNELS: ChannelsFields[] = [
     {
         channelId: 11,
         channelName: 'CNBC TV18',
-        channelImg: '1',
+        channelImg: '../../assets/CNBC_TV18.jpg',
         channelPrice: 19
     },
     {
         channelId: 12,
         channelName: 'Univision',
-        channelImg: '1',
+        channelImg: '../../assets/Univision.png',
         channelPrice: 9
     },
     {
         channelId: 13,
         channelName: 'Fox News',
-        channelImg: '1',
+        channelImg: '../../assets/Fox_News.png',
         channelPrice: 7
     },
     {
         channelId: 14,
         channelName: 'CBS',
-        channelImg: '1',
+        channelImg: '../../assets/cbs.png',
         channelPrice: 14
     },
     {
         channelId: 15,
         channelName: 'Al Jazeera',
-        channelImg: '1',
+        channelImg: '../../assets/Aljazeera.png',
         channelPrice: 19
     },
     {
         channelId: 16,
         channelName: 'Disney XD',
-        channelImg: '1',
+        channelImg: '../../assets/Disney_XD.jpg',
         channelPrice: 19
     },
 ];
