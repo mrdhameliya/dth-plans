@@ -33,26 +33,12 @@
     <div class="third-part">
         <div>
             <h4>Extra Subscribed Channels List:</h4>
-            <div style="display: inline-block; margin-top: 10px;">
-                <div>
-                    <div class="inline-style-channel">
-                        <span>
-                            <h6>CNBC TV18</h6>
-                            <img style="width: 50px; height: 50px;" src="../../assets/CNBC_TV18.jpg" alt="CNBC TV Logo">
-                        </span>
-                    </div>
-                    <div class="inline-style-channel">
-                        <span>
-                            <h6>Disney XD</h6>
-                            <img style="width: 50px; height: 50px" src="../../assets/Disney_XD.jpg" alt="CNBC TV Logo">
-                        </span>
-                    </div>
-                    <div class="inline-style-channel">
-                        <span>
-                            <h6>Univision</h6>
-                            <img style="width: 50px; height: 50px;" src="../../assets/Univision.png" alt="CNBC TV Logo">
-                        </span>
-                    </div>
+            <div style="display: inline-block; margin-top: 10px;" *ngFor="let channel of channels; let i = index">
+                <div *ngIf="i < 3" class="inline-style-channel">
+                    <span>
+                        <h6>{{channel.channelName}}</h6>
+                        <img style="width: 50px; height: 50px;" src="{{channel.channelImg}}" alt="CNBC TV Logo">
+                    </span>
                 </div>
             </div>
         </div>
