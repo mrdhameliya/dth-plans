@@ -16,8 +16,6 @@ import { PlanDetailsModalComponent } from '../plan-details-modal/plan-details-mo
 export class PlansAndChannelsListComponent implements OnInit {
 
   total = 0;
-  planAddClick = 0;
-  channelAddClick = 0;
   plans: PlansFields[];
   channels: ChannelsFields[];
 
@@ -49,14 +47,12 @@ export class PlansAndChannelsListComponent implements OnInit {
 
   planAddButton(planData: number) {
     this.total = this.total + planData;
-    this.planAddClick = this.planAddClick + 1;
     console.log(this.total);
     console.log(planData);
   }
 
   channelAddButton(channelData: number) {
     this.total = this.total + channelData;
-    this.channelAddClick = this.channelAddClick + 1;
   }
 
   openModal(index: number) {

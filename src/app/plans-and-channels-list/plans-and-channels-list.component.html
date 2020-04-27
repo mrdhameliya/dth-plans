@@ -31,7 +31,7 @@
         <div class="inline-style-channel" *ngFor="let channel of channels">
             <div>
                 <h5>{{channel.channelName}}</h5>
-                <!-- <img src="../../assets/dishTV.png" alt="Dish TV Logo"> -->
+                <img style="width: 80px; height: 60px;" src="{{channel.channelImg}}" alt="Dish TV Logo">
                 <h6>Price : ₹{{channel.channelPrice}}*</h6>
                 <button class="btn mr-1" (click)="channelAddButton(channel.channelPrice)">Add</button>
             </div>
